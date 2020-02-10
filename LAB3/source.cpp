@@ -4,13 +4,12 @@
 int main()
 {
 	BinaryTree b;
-	b.add(10);
-	b.add(20);
-	b.add(20);
-	b.add(30);
-	b.add(30);
-	b.add(30);
-	b.add(30);
+	b.add(1);
+	b.add(11);
+	b.add(9);
+	b.add(2);
+	b.add(113);
+	b.add(6);
 
-	b.printChild(b.root);
+	b.print();
 }

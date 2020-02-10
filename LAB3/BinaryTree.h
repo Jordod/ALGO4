@@ -4,14 +4,14 @@
 class BinaryTree
 {
 private:
-
-	
-public:
 	TreeNode* root;
 	void addNode(TreeNode* at, TreeNode* toAdd);
-	void printChild(TreeNode* n);
+	void print(TreeNode* n);
+	
+public:
 	BinaryTree();
 	~BinaryTree();
 	void add(int toAdd);
+	void print();
 	int height() const;
 };
