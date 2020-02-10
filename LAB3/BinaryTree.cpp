@@ -18,7 +18,7 @@ void BinaryTree::add(int toAdd)
 
 void BinaryTree::addNode(TreeNode* at, TreeNode* toAdd)
 {
-	if (at->value > toAdd->value)
+	if (toAdd->value < at->value)
 	{
 		if (at->leftChild == nullptr)
 		{
@@ -27,7 +27,7 @@ void BinaryTree::addNode(TreeNode* at, TreeNode* toAdd)
 		}
 		addNode(at->leftChild, toAdd);
 	}
-	else if (at->value < toAdd->value)
+	else if (toAdd->value > at->value)
 	{
 		if (at->rightChild == nullptr)
 		{
@@ -53,5 +53,22 @@ void BinaryTree::print(TreeNode* n)
 
 int BinaryTree::height() const
 {
-	return 0;
+	return height(root) - 1;
+}
+
+//https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/
+int BinaryTree::height(TreeNode* n) const
+{
+	if (root == nullptr) return -1;
+	if (n == nullptr)
+		return 0;
+	else
+	{
+		/* compute the depth of each subtree */
+		int lDepth = height(n->leftChild);
+		int rDepth = height(n->rightChild);
+
+		if (lDepth > rDepth) return lDepth + 1;
+		return rDepth + 1;
+	}
 }

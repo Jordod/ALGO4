@@ -7,6 +7,7 @@ private:
 	TreeNode* root;
 	void addNode(TreeNode* at, TreeNode* toAdd);
 	void print(TreeNode* n);
+	int height(TreeNode* n) const;
 	
 public:
 	BinaryTree();

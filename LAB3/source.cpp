@@ -4,12 +4,12 @@
 int main()
 {
 	BinaryTree b;
+	b.add(10);
 	b.add(1);
-	b.add(11);
-	b.add(9);
-	b.add(2);
-	b.add(113);
-	b.add(6);
+	b.add(12);
 
+
+	std::cout << "Ordered Tree Values" << std::endl;
 	b.print();
+	std::cout << "Height: " << b.height();
 }
