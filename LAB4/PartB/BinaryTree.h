@@ -13,7 +13,7 @@ private:
 	bool hasPathSum(TreeNode* n, int sum) const;
 	void printPaths(TreeNode* n, std::vector<int>& path);
 	int minValue(TreeNode* n) const;
-	bool isBST(TreeNode* n, int& prev);
+	bool isBST(TreeNode* n, int min, int max);
 
 public:
 	BinaryTree();

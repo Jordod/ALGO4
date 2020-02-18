@@ -135,19 +135,6 @@ int BinaryTree::minValue(TreeNode* n) const
 	minValue(n->leftChild);
 }
 
-bool BinaryTree::isBST()
-{
-	int prev = INT_MIN;
-	return isBST(root, prev);
-}
-
-bool BinaryTree::isBST(TreeNode* n, int& prev)
-{
-
-	if(n->value < prev)
-	return false;
-}
-
 int BinaryTree::maxValue() const
 {
 	return maxValue(root);
@@ -157,6 +144,22 @@ int BinaryTree::maxValue(TreeNode* n) const
 {
 	if (n->rightChild == nullptr) return n->value;
 	maxValue(n->rightChild);
+}
+
+bool BinaryTree::isBST()
+{
+	return isBST(root, INT_MIN, INT_MAX);
+}
+
+bool BinaryTree::isBST(TreeNode* n, int min, int max)
+{
+	if (n == nullptr) return true; //base1
+	if (n->value <= min || n->value >= max) return false; //base2
+
+	//lower min/max in recur
+	bool right = isBST(n->rightChild, n->value, max);
+	bool left = isBST(n->leftChild, min, n->value);
+	return right && left;
 }
 
 //https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree/

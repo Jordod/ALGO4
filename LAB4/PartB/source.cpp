@@ -20,4 +20,5 @@ int main()
 	b.printPaths();
 	cout << "Min: " << b.minValue() << endl;
 	cout << "Max: " << b.maxValue() << endl;
+	cout << "Is BST: " << (b.isBST() ? "True" : "False") << endl;
 }
