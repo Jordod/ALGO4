@@ -113,6 +113,6 @@ vector<T> Heap<T>::sort(int length)
 {
 	if (length == 1) return heap; //base case
 	swap(heap[0], heap[length - 1]); //swap to end
-	trickleDown(0, length); //re-heap
+	trickleDown(0, length - 1); //re-heap
 	sort(length - 1);
 }
