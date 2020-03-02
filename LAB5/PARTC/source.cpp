@@ -20,6 +20,8 @@ int main()
 	h.insert(12);
 	h.insert(11);
 	h.insert(8);
-
+		
+	//I would use the heapsort to find nSmallest but I can't get it working
+	
 	h.display();
 }
